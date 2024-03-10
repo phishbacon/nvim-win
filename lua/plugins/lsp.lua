@@ -55,18 +55,34 @@ return {
 		})
 
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
+        local cmp_confirm = { behavior = cmp.ConfirmBehavior.Insert }
 
 		cmp.setup({
+            completion = {
+                completeopt = 'menu,menuone,noinsert'
+            },
 			snippet = {
 				expand = function(args)
 					require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({
-				['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-				['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-				['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                ['<cr>'] = cmp.mapping.confirm({ select = true, cmp_confirm }),
+				['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+				['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
 				['<C-Space>'] = cmp.mapping.complete(),
+                ['<C-l>'] = cmp.mapping({
+                    i = function ()
+                        if cmp.visible() then
+                            cmp.abort()
+                        end
+                    end,
+                    c = function ()
+                       if cmp.visible() then
+                           cmp.close()
+                       end
+                    end,
+                }),
 			}),
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' },
