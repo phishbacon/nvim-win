@@ -27,6 +27,7 @@
 ### cmp keybinds
 | Key | Function |
 | --- | -------- |
-| `<C-p>` | Select previous line in autocomplete list |
-| `<C-n>` | Select next line in autocomplete list |
-| `<C-y>` | Confirm autocomplete selection |
+| `<C-k>` | Select previous line in autocomplete list |
+| `<C-j>` | Select next line in autocomplete list |
+| `<C-l>` | Close autocomplete menu |
+| `<cr>` | Confirm autocomplete selection |
