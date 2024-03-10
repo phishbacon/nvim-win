@@ -31,4 +31,13 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>th", "<cmd>bprev<cr>")
 vim.keymap.set("n", "<leader>tl", "<cmd>bnext<cr>")
-vim.keymap.set("n", "<leader>tq", "<cmd>bd<cr>")
+vim.keymap.set("n", "<leader>tq", function ()
+   if (vim.bo.buftype == "terminal") then
+        vim.cmd("bd!")
+    else
+        vim.cmd("bd")
+   end
+end)
+
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+vim.keymap.set("n", "<leader>bs", "<cmd>belowright split term://zsh<cr>")

@@ -16,6 +16,7 @@
 | N | `<leader>th` | Go to previous buffer |
 | N | `<leader>tl` | Go to next buffer |
 | N | `<leader>tq` | Close current buffer |
+| N | `<leader>bs` | Open terminal emulator buffer |
 ## Telescope keybinds
 | Mode | Key | Function |
 | ---- | --- | -------- |
