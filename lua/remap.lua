@@ -41,3 +41,10 @@ end)
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("n", "<leader>bs", "<cmd>belowright split term://zsh<cr>")
+vim.keymap.set("n", "<leader>bs", function ()
+    if (os.getenv("HOME")) then
+        vim.cmd("belowright split term://zsh")
+    else
+        vim.cmd("belowright split term://powershell")
+    end
+end)
