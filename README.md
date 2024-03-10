@@ -1,5 +1,5 @@
-### Key Bindings
-## Vim remaps
+## Key Bindings
+### Vim remaps
 | Mode | Key | Function |
 | ---- | --- | -------- |
 | N | `<leader>pv` | Open netrw |
@@ -17,14 +17,14 @@
 | N | `<leader>tl` | Go to next buffer |
 | N | `<leader>tq` | Close current buffer |
 | N | `<leader>bs` | Open terminal emulator buffer |
-## Telescope keybinds
+### Telescope keybinds
 | Mode | Key | Function |
 | ---- | --- | -------- |
 | N | `<leader>ff` | Open fuzzy finder |
 | N | `<C-c>` | (After opening telescope) Close fuzzy finder |
 | N | `<C-f>` | Open fuzzy finder for git files |
 | N | `<leader>fs` | Grep entire directory |
-## cmp keybinds
+### cmp keybinds
 | Key | Function |
 | --- | -------- |
 | `<C-p>` | Select previous line in autocomplete list |
