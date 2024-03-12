@@ -38,3 +38,5 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
         end
     end,
 })
+
+vim.cmd.colorscheme("dark_flat")
