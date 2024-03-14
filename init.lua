@@ -13,9 +13,17 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local function get_eol_char()
+    if vim.bo.fileformat == "unix" then
+        return '↓'
+    else
+        return '↴'
+    end
+end
 -- Set options to show spaces, tabs, and end-of-line characters as characters
 vim.api.nvim_command('set list')
-vim.api.nvim_command('set listchars=tab:→\\ ,eol:↩,space:•')
+
+vim.api.nvim_command('set listchars=tab:→\\ ,eol:' .. get_eol_char() .. ',space:•')
 
 require("lazy").setup("plugins")
 local autocmd = vim.api.nvim_create_autocmd
@@ -44,10 +52,3 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
 })
 
 vim.cmd.colorscheme("dark_flat")
--- ~/.config/nvim/init.lua
-
--- Show spaces, tabs, and newlines as characters
-vim.api.nvim_command('setlocal list')
-vim.api.nvim_command('setlocal listchars=tab:→\\ ,trail:•,extends:⟩,precedes:⟨,nbsp:⍽,eol:↩')
-
-
