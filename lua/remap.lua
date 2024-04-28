@@ -48,3 +48,7 @@ vim.keymap.set("n", "<leader>bs", function ()
         vim.cmd("belowright split term://powershell")
     end
 end)
+
+vim.keymap.set("n", "<space>e", function ()
+    vim.diagnostic.open_float(0, {scope = "line"})
+end)
